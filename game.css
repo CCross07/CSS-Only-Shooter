@@ -44,6 +44,11 @@ a:hover {
     counter-increment:aliens;
 }
 
+#score::after {
+    content: counter(aliens);
+    font-size: 20px;
+}
+
 .input {
     position: fixed;
     left: 0;
