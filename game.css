@@ -1,16 +1,16 @@
-body{
-    counter-reset: aliens;
+body {
     background-color: grey;
     background-size: 100%;
     font-family: monospace;
     color: purple;
     text-align: center;
     overflow: hidden;
+    counter-reset: num;
 }
 
 #title {
     text-align: center;
-    margin: auto;   
+    margin: auto;
 }
 
 #home {
@@ -38,14 +38,15 @@ a:hover {
     width: 1500px;
     margin: auto;
     background-image: url(background.jpeg);
+    border: solid 3px purple;
 }
 
-.input[type="radio"]:checked {
-    counter-increment:aliens;
+.input:checked {
+    counter-increment: num;
 }
 
-#score::after {
-    content: counter(aliens);
+#score:after {
+    content: counter(num);
     font-size: 20px;
 }
 
@@ -55,25 +56,17 @@ a:hover {
     opacity: 0;
 }
 
-.alien { 
+.alien {
     transition: 0.2s;
     animation: move 8s infinite alternate;
 }
 
-.input1:not(:checked) ~ .alien1,
-.input2:not(:checked) ~ .alien2,
-.input3:not(:checked) ~ .alien3,
-.input4:not(:checked) ~ .alien4,
-.input5:not(:checked) ~ .alien5 {
-  opacity: 1; 
+.input1:not(:checked) ~ .alien1, .input2:not(:checked) ~ .alien2, .input3:not(:checked) ~ .alien3, .input4:not(:checked) ~ .alien4, .input5:not(:checked) ~ .alien5 {
+    opacity: 1;
 }
 
-.input1:checked ~ .alien1,
-.input2:checked ~ .alien2,
-.input3:checked ~ .alien3,
-.input4:checked ~ .alien4,
-.input5:checked ~ .alien5 {
-  opacity: 0;
+.input1:checked ~ .alien1, .input2:checked ~ .alien2, .input3:checked ~ .alien3, .input4:checked ~ .alien4, .input5:checked ~ .alien5 {
+    opacity: 0;
 }
 
 .alien {
@@ -107,23 +100,28 @@ a:hover {
     animation-delay: -9s;
 }
 
-@keyframes move{
-0%{
-    left:0%;
+@keyframes move {
+    0% {
+        left: 0%;
     }
-20%{
-    left:20%;top:50%; 
+    20% {
+        left: 20%;
+        top: 50%;
     }
-40%{
-    top:30%; left:90%;
+    40% {
+        top: 30%;
+        left: 90%;
     }
-60%{
-    top:80%; right:80%;
+    60% {
+        top: 80%;
+        right: 80%;
     }
-80%{
-    top:10%; left:20%:
+    80% {
+        top: 10%;
+        left: 20%:
     }
-100%{
-    top:30%; right:20%; 
+    100% {
+        top: 30%;
+        right: 20%;
     }
 }
